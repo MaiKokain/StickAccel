@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven {
+            url "https://maven.kikugie.dev/snapshots"
+            name "KikuGie Snapshots"
+        }
+        maven {
+            url "https://maven.neoforged.net/releases"
+        }
+    }
+}
+
+plugins {
+    id("dev.kikugie.stonecutter") version "0.7.8"
+}
+
+stonecutter {
+    kotlinController = false
+    centralScript = "build.gradle"
+
+    create(getRootProject()) {
+        versions "1.21"
+    }
+}
+
+rootProject.name = 'StickAccel'
+
